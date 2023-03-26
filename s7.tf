@@ -7,6 +7,12 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-east-1"
+  access_key = AWS_ACCESS_KEY_ID
+  secret_key = AWS_SECRET_ACCESS_KEY
+  token = AWS_SESSION_TOKEN
+
 resource "aws_vpc" "tf-vpc" {
   cidr_block = "10.0.0.0/16"
 
