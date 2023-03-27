@@ -90,6 +90,11 @@ resource "aws_route_table_association" "tf-ra" {
   route_table_id = aws_route_table.tf-r.id
 }
 
+resource "aws_key_pair" "tf-key" {
+  key_name   = "tf-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNBcXZQAZ9yutwBdfpipjVqM3480Kp+2gJcOxutSy5QntNAhgvulBy4hzi0Lq3VBA9aATkQH9fUBoUMS9ppI+Tw4xpBAJA+zz/wDSH7QixmeWC0EFc9ouyfMVdUzofesSBSxUiEacix/mThgkyQcM+As+BkG5BtUjwlr0UX3r/9DyyKAwckRjvfNbtjf5tiXFA4wZh0i6zuiTaDhWTScuDvalp0ovSIT0xP27jjZP82Xx6+iZag6pnZ0v7h6e2xn+2MJI4IDVNUCsw0w0lALFmuoDaKR8ecS+S9q7g/TSPxqPycD6Hpoc1eFO4LyfzeFqeTj1lm6nAWF0d2WlbLjdL d00413734@desdemona"
+}
+
 resource "aws_instance" "dev" {
   ami           = "ami-0557a15b87f6559cf"
   instance_type = "t2.micro"
